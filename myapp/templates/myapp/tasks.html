@@ -1,0 +1,23 @@
+
+{% extends "myapp/base.html" %}
+
+{% block content %}
+	<h2>Se encuentra en tareas</h2>
+	<a href=" {% url 'myapp:create_task' %}"><button>Crear tarea</button></a>
+	<ul>
+	{% for task in tasks %}
+
+		<a href=" {% url 'myapp:task_detail' task.id %}">			
+			<li>
+				<h3>{{task.title}}</h3>
+				<p>{{task.description}}</p>
+				<p><strong>{{task.user.username}}</strong></p>
+			</li>		
+		</a>
+
+	{% endfor %}
+	</ul>
+
+	
+{% endblock content %}
+

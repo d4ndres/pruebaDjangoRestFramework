@@ -1,0 +1,18 @@
+{% extends "myapp/base.html" %}
+
+{% block content %}
+
+	<h1>Signup</h1>
+	<form action="" method="post">
+		
+{% csrf_token %}	
+		
+		<h2>{{ error }}</h2>
+		{{ form.as_p }}
+		<input type="submit" value="Enviar">
+	</form>
+	
+
+			
+{% endblock content %}
+

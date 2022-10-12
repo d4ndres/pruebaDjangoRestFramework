@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		header{
+			background: skyblue;
+		}
+	</style>
+</head>
+<body>	
+	<header>
+		<h1>Gestion de tareas</h1>
+		<ul>
+			<li>
+				<a href=" {% url 'myapp:home' %}">Home</a>
+			</li>
+
+
+			{% if user.is_authenticated %}
+				<li>
+					<a href=" {% url 'myapp:sigout' %} ">logout</a>
+				</li>
+				<li>
+					<a href=" {% url 'myapp:tasks' %} ">tareas</a>
+				</li>
+				<li>
+					<a href=" {% url 'myapp:create_task' %} ">crear tarea</a>
+				</li>
+			{% else %}
+				<li>
+					<a href=" {% url 'myapp:signup' %} ">Signup</a>
+				</li>
+				<li>
+					<a href=" {% url 'myapp:sigin' %} ">Sigin</a>
+				</li>
+			{% endif %}
+
+
+		</ul>
+	</header>
+	<main>
+	{% block content %}
+	{% endblock %}		
+	</main>
+
+
+</body>
+</html>
