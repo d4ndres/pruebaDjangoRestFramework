@@ -1,11 +1,11 @@
 from django.urls import path
 from . import views
 
-from .api import UserViewSet
+from .api import TaskViewSet
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register('api/users', UserViewSet, 'users')
+router.register('api/tasks', TaskViewSet, 'tasks')
 
 
 app_name = 'myapp'

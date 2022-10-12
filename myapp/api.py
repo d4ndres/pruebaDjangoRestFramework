@@ -1,8 +1,8 @@
-from django.contrib.auth.models import User
+from .models import Task
 from rest_framework import viewsets, permissions
-from .serializers import UserSerializer
+from .serializers import TaskSerializer
 
-class UserViewSet( viewsets.ModelViewSet ):
-	queryset = User.objects.all()
+class TaskViewSet( viewsets.ModelViewSet ):
+	queryset = Task.objects.all()
 	permission_classes = [permissions.AllowAny]
-	serializer_class = UserSerializer
+	serializer_class = TaskSerializer
